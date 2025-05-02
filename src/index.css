@@ -4,5 +4,10 @@ body {
 
 .container {
   margin: 24px auto;
-  max-width: 600px;
+  max-width: 100%;
+}
+
+.phoneBook {
+  margin: 0 auto;
+  max-width: 400px;
 }

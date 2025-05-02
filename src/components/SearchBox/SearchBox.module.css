@@ -1,9 +1,9 @@
-.label {
-    margin-top: 40px;
+.search {
+    display: flex;
+    flex-direction: row;
 }
 
 .input {
-    margin-top: 16px;
     font-size: 14px;
     padding: 8px;
     border: 1px solid #ccc;

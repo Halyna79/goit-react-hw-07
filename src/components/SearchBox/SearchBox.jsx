@@ -8,15 +8,17 @@ function SearchBox() {
 
 
     return (
-        <label className={s.label}>
-            Find contacts by name
-            <input
-                type='text'
-                value={search }
-                onChange={e => dispatch(changeFilter(e.target.value))}
-                className={s.input}
-            />
-        </label>
+        <div className={s.search}>
+            <label className={s.label}>
+                Find contacts by name
+                <input
+                    type='text'
+                    value={search }
+                    onChange={e => dispatch(changeFilter(e.target.value))}
+                    className={s.input}
+                />
+            </label>
+        </div>
     );
 }
 

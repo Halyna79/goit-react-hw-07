@@ -1,13 +1,14 @@
 import s from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 import { useSelector } from 'react-redux';
+import { selectError, selectFilteredContacts } from '../../redux/contactsSlice';
 
 function ContactList() {
-    const contacts = useSelector(state => state.contacts.items);
-    const search = useSelector(state => state.filters.name);
-    const filteredContacts = contacts?.filter(contact =>
-        contact.name.toLowerCase().includes(search.toLowerCase())
-    );
+    const error = useSelector(selectError)
+    const filteredContacts = useSelector(selectFilteredContacts)
+    if (!filteredContacts.length && !error) 
+        return <p>You don't have any contacts yet. Start by adding one!</p>
+
     return (
         <ul className={s.list}>
             {filteredContacts?.map(contact => (
@@ -18,6 +19,6 @@ function ContactList() {
             ))}
         </ul>
     );
-}
+};
 
 export default ContactList;
